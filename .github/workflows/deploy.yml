@@ -1,41 +1,48 @@
-name: Deploy to GitHub Pages
+name: Deploy static content to Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
 concurrency:
   group: "pages"
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  build-and-deploy:
+  deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source code
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: Replace API key placeholder & create CNAME
+      - name: Set up Pages
+        uses: actions/configure-pages@v5
+
+      - name: Replace API key placeholder and build dist
         run: |
           mkdir dist
+          # Replace placeholder with secret
           sed "s|{{WEB3FORMS_API_KEY}}|${{ secrets.WEB3FORMS_API_KEY }}|g" index.html > dist/index.html
-          echo "www.apeapothecary.com" > dist/CNAME
+          # Copy assets (if you have any)
+          cp -r assets dist/ 2>/dev/null || true
+          cp -r styles dist/ 2>/dev/null || true
 
-      - name: Upload pages artifact
-        uses: actions/upload-pages-artifact@v1
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
           path: dist
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
+
