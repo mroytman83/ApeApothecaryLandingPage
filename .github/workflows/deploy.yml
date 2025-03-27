@@ -10,25 +10,32 @@ permissions:
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
   build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout source code
         uses: actions/checkout@v3
 
-      - name: Replace API key placeholder
+      - name: Replace API key placeholder & create CNAME
         run: |
           mkdir dist
           sed "s|{{WEB3FORMS_API_KEY}}|${{ secrets.WEB3FORMS_API_KEY }}|g" index.html > dist/index.html
+          echo "www.apeapothecary.com" > dist/CNAME
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+      - name: Upload pages artifact
+        uses: actions/upload-pages-artifact@v1
         with:
           path: dist
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v2
