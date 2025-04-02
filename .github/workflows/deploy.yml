@@ -37,7 +37,7 @@ jobs:
           cp -r assets dist/ 2>/dev/null || true
           cp -r styles dist/ 2>/dev/null || true
           # Add CNAME for custom domain
-          echo "www.apeapothecary.com" > dist/CNAME
+          # echo "www.apeapothecary.com" > dist/CNAME
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
