@@ -2,232 +2,102 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" href="/static/favicon.png" type="image/png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ape Apothecary</title>
-  <style>
-    :root {
-      --dark-green: #132A25;
-      --dark-brown: #2B1B12;
-      --navy: #17173A;
-      --cream: #E5DBC7;
-      --gray: #B2BBBD;
-      --button-gray: #5E6667;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background: var(--cream);
-      color: var(--dark-green);
-    }
-
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      background: var(--dark-green);
-      color: white;
-      width: 100%;
-      box-sizing: border-box;
-      border-bottom: 3px solid var(--cream);
-    }
-
-    header img {
-      height: 50px;
-      border-radius: 12px;
-    }
-
-    header h1 {
-      font-size: 2rem;
-      margin: 0;
-      color: white;
-      padding: 0.25rem 0.75rem;
-      border: 2px solid transparent;
-    }
-
-    .hero {
-  position: relative;
-  width: 100%;
-  height: 600px;
-  background: url('https://i.ibb.co/PGp1BZWT/image.png') no-repeat center center / contain;
-  background-color: #3c2b1b; 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  color: white;
-}
-
-
-    .hero-content {
-      background-color: rgba(0, 0, 0, 0.65);
-      padding: 2rem;
-      max-width: 500px;
-      border-radius: 20px;
-      text-align: center;
-    }
-
-    .hero-content h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-
-    .hero-content p {
-      font-size: 1.1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      justify-content: center;
-    }
-
-    .btn-3 {
-      background: var(--button-gray);
-      border: none;
-      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
-      color: white;
-      font-weight: 900;
-      letter-spacing: 1px;
-      padding: 0.75rem 1.5rem;
-      text-transform: uppercase;
-      cursor: pointer;
-      text-decoration: none;
-      transition: all 300ms ease-in-out;
-      border-radius: 10px;
-      font-size: 0.9rem;
-    }
-
-    .btn-3:hover {
-      background: #4a4f50;
-      color: #fff;
-      transform: translateY(-2px);
-    }
-
-    #contact {
-      padding: 6rem 2rem;
-      background: var(--navy);
-      color: white;
-    }
-
-    #contact h2 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-    }
-
-    #contact h2::after {
-      content: " 🍫";
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    input, textarea {
-      padding: 1rem;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-    }
-
-    button[type="submit"] {
-      background: var(--button-gray);
-      color: white;
-      border: none;
-      padding: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: background 250ms ease;
-      border-radius: 5px;
-    }
-
-    button[type="submit"]:hover {
-      background: #4a4f50;
-    }
-
-    @media (max-width: 768px) {
-      header {
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 1rem;
-      }
-
-      .hero {
-        height: auto;
-        padding: 2rem 1rem;
-      }
-
-      .hero-content {
-        max-width: 100%;
-        padding: 1.5rem;
-        text-align: center;
-        border-radius: 20px;
-      }
-
-      header h1 {
-        font-size: 1.5rem;
-      }
-
-      .buttons {
-        justify-content: center;
-      }
-    }
-  </style>
-
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4CE8H6VFRS"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-4CE8H6VFRS');
-  </script>
-
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="img/favicon.png" type="image/png">
 </head>
 <body>
-  <header>
-    <img src="https://i.ibb.co/8nJFWZhp/logo.png" alt="Ape Apothecary Logo" />
-    <h1>Ape Apothecary</h1>
-  </header>
+  <main>
+    <header class="site-header">
+      <img src="img/logo.png" alt="Ape Apothecary Logo" />
+      <nav>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#product">DreamBars</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>DreamBars Are Coming!</h2>
-      <p>Nootropic-powered sleep chocolates designed to enhance your nightly ritual. Rooted in clinically supported ingredients for calm, clarity, and deeper rest.</p>
-      <div class="buttons">
-        <a href="#contact" class="btn-3">Contact</a>
-        <a href="https://docs.google.com/forms/d/1gU93Bo-a4rqmTalm-C9t5z1ygu4skAC5YAHFI9ViZhs/preview" class="btn-3" target="_blank">Survey</a>
+    <section id="hero" class="hero">
+      <div class="hero-content">
+        <h2>DreamBars Are Coming!</h2>
+        <p>Nootropic-powered sleep chocolates designed to enhance your nightly ritual. Rooted in clinically supported ingredients for calm, clarity, and deeper rest.</p>
+        <div class="buttons">
+          <a href="#contact" class="btn-3">Contact</a>
+          <a href="https://docs.google.com/forms/d/1gU93Bo-a4rqmTalm-C9t5z1ygu4skAC5YAHFI9ViZhs/preview" class="btn-3" target="_blank">Survey</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact">
-    <h2>Get in Touch</h2>
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="{{WEB3FORMS_API_KEY}}" />
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
-      <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
-      <button type="submit">Submit Form</button>
-    </form>
-  </section>
+    <section id="about" class="about">
+      <h2>About Us</h2>
+      <p>
+        At Ape Apothecary, we're redefining sleep with science-backed nootropics fused into decadent chocolate. Our mission is to make restful nights feel indulgent, natural, and deeply restorative.
+      </p>
+    </section>
+
+    <section id="product" class="product">
+      <h2>Meet DreamBars</h2>
+      <p>
+        DreamBars are delicious, functional chocolates formulated with three key compounds that gently guide you into deep, restorative sleep.
+      </p>
+    
+      <div class="ingredient-columns">
+        <div class="ingredient-card">
+          <h3>L-Theanine</h3>
+          <p>A naturally occurring amino acid found in tea leaves. It promotes relaxation without drowsiness, reduces anxiety, and enhances alpha brain waves associated with calm alertness.</p>
+        </div>
+    
+        <div class="ingredient-card">
+          <h3>Magnesium</h3>
+          <p>Magnesium supports muscle relaxation, reduces stress, and helps regulate melatonin—the hormone that guides your sleep-wake cycle. Essential for deep, uninterrupted rest.</p>
+        </div>
+    
+        <div class="ingredient-card">
+          <h3>5-HTP</h3>
+          <p>5-Hydroxytryptophan is a compound your body uses to produce serotonin. It helps elevate mood and promotes natural melatonin production for smoother sleep transitions.</p>
+        </div>
+      </div>
+    </section>
+    
+
+    <section id="social-proof" class="social-proof">
+      <h2>What Early Testers Are Saying</h2>
+      <div class="testimonials">
+        <blockquote>
+          “I actually crave bedtime now — and I sleep like a log.”
+          <cite>– Beta Tester, LA</cite>
+        </blockquote>
+        <blockquote>
+          “Tastes like chocolate. Works like magic.”
+          <cite>– Early User, NY</cite>
+        </blockquote>
+        <blockquote>
+          “So calming. I’ve never slept this deeply without melatonin.”
+          <cite>– Trial Group Member</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Be the First to Try DreamBars</h2>
+      <p class="contact-subline">Join the waitlist to get early access and special launch gifts.</p>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE" />
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
+        <input type="checkbox" name="botcheck" style="display: none;" />
+        <button type="submit">Submit Form</button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <p>© 2025 Ape Apothecary. All rights reserved.</p>
+    </footer>
+  </main>
 </body>
 </html>
-
-
-
