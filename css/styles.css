@@ -43,7 +43,7 @@
     align-items: center;
     background: var(--accent);
     color: var(--white);
-    position: sticky;
+    position: static;
     top: 0;
     padding: 1rem 2rem;
     min-height: 64px;
