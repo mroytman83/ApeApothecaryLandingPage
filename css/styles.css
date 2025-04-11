@@ -4,7 +4,7 @@
 :root {
     --bg: #f3f0ec;
     --text: #1f1e1d;
-    --accent: #5e3a2f;
+    --accent: #201815;
     --accent-light: #a5856c;
     --leaf: #3a5c47;
     --lavender: #726681;
@@ -151,7 +151,7 @@
   }
   
   .contact {
-    background: var(--leaf);
+    background: var(--accent-light);
     color: var(--white);
     padding: 6rem 2rem;
   }
