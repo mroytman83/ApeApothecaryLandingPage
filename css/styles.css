@@ -389,4 +389,18 @@
   .alt-bg {
     background-color: var(--muted); /* or another soft tone */
   }
+  .ingredient-note {
+    margin-top: 2rem;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--lavender);
+    text-align: center;
+  }
+  .hero-highlight {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--lavender);
+    display: block;
+    margin-top: 0.75rem;
+  }
   
