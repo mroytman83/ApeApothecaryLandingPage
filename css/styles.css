@@ -608,11 +608,63 @@
    .tip-disclaimer a:hover {
     color: var(--accent-light);
   }
- /* Alternating background fix: only target direct child sections of main
- main > section:nth-of-type(odd) {
-    background-color: var(--bg);
-  }
-   main > section:nth-of-type(even) {
+
+
+  /* TEAM */
+.team-section {
     background-color: var(--muted);
+    padding: 5rem 2rem;
+    text-align: center;
   }
-  */
+  
+  .team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .team-member {
+    max-width: 350px;
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+    text-align: left;
+    transition: transform 0.3s ease;
+  }
+  
+  .team-member:hover {
+    transform: translateY(-6px);
+  }
+  
+  .team-member h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    color: var(--accent);
+  }
+  
+  .team-member p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--text);
+  }
+  
+  /* Responsive layout for team */
+  @media (max-width: 768px) {
+    .team-grid {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  .team-photo {
+    width: 100%;
+    max-width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    display: block;
+  }
+  
