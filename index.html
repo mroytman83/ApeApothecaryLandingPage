@@ -7,6 +7,18 @@
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="icon" href="img/favicon.png" type="image/png">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+    <!-- Google tag (gtag.js) -->
+    <!--re-added, pls don't delete-->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4CE8H6VFRS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+  
+      gtag('config', 'G-4CE8H6VFRS');
+    </script>
+  
 </head>
 <body>
   <main>
@@ -180,11 +192,12 @@
             </b>
           </p>
         </div>
-        <!-- <div class="team-member" data-aos="fade-up" data-aos-delay="200">
-          <img src="img/placeholder.jpg" alt="Michael Roytman" class="team-photo" />
+        <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+          <img src="img/michael.png" alt="Michael Roytman" class="team-photo" />
           <h3>Michael Roytman</h3>
-          <p>Bio coming soon. Co-founder, dreamer, and sleep optimizer in progress.</p>
-        </div> -->
+          <p>During the Coronavirus Epidemic, Michael became obsessed with fitness. He is what you call a fitness generalist, interested in pushing his body to the absolute limit in multiple disciplines, such as BJJ, rock climbing, weightlifting, and calisthenics. While on his journey of human optimization, he began experimenting with exogenous supplementation protocols similar to masterminds like Dr. Peter Attia and Dr. Andrew Huberman to enhance his training performance and channel his focus on computer programming. Sleep is a significant component of both, so Michael played with formulations to improve sleep, resulting in DreamBars! Michael is currently working on WakeBars, a formulation to help you start your day on a blast🔥 🤫. 
+          </p>
+        </div>
       </div>
     </section>
     
@@ -192,7 +205,7 @@
       <h2>Be the First to Try DreamBars</h2>
       <p class="contact-subline">Join the waitlist to get early access and special launch gifts.</p>
       <form action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE" />
+        <input type="hidden" name="access_key" value="{{WEB3FORMS_API_KEY}}" />
         <input type="text" name="name" placeholder="Your Name" required />
         <input type="email" name="email" placeholder="Your Email" required />
         <textarea name="message" placeholder="Your Message" rows="6" required></textarea>
